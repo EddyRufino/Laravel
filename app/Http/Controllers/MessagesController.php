@@ -63,6 +63,8 @@ class MessagesController extends Controller
 
         event(new MessageWasReceived($message));
 
+        // MessageWasReceived::dispatch($message);
+
         // auth()->user()->messages()->create($data);
 
         // return $message;
