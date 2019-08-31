@@ -14,17 +14,19 @@
         <a href="{{ route('portfolio.index') }}">Regresar</a>
 
         @auth
-            <div class="btn-group btn-group-sm">
-                <a class="btn btn-primary" href="{{ route('portfolio.edit', $portfolio) }}"
-                    >Editar
-                </a>
-                <a class="btn btn-danger rounded-right" href="#" onclick="document.getElementById('delete-portfolio').submit()"
-                    >Eliminar
-                </a>
-                <form class="d-none" id="delete-portfolio" action="{{ route('portfolio.destroy', $portfolio) }}" method="post">
-                        @csrf @method('DELETE')
-                </form>
-            </div>
+            @if (auth()->user()->hasRoles(['admin']))
+                <div class="btn-group btn-group-sm">
+                    <a class="btn btn-primary" href="{{ route('portfolio.edit', $portfolio) }}"
+                        >Editar
+                    </a>
+                    <a class="btn btn-danger rounded-right" href="#" onclick="document.getElementById('delete-portfolio').submit()"
+                        >Eliminar
+                    </a>
+                    <form class="d-none" id="delete-portfolio" action="{{ route('portfolio.destroy', $portfolio) }}" method="post">
+                            @csrf @method('DELETE')
+                    </form>
+                </div>
+            @endif
         @endauth
     </div>
 

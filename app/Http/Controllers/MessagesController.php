@@ -11,6 +11,12 @@ use Mail;
 
 class MessagesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('roles:admin');
+    }
+
     public function index()
     {
         $key = "message.page." . request('page', 1);
@@ -18,6 +24,8 @@ class MessagesController extends Controller
         $messages = Cache::tags('messages')->rememberForever($key, function(){
             return Message::with(['user', 'note', 'tags'])->latest()->paginate(10);
         });
+
+        // $this->authorize(new User, $messages);
 
         return view('messages.index', compact('messages'));
 
