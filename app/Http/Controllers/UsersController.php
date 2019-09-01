@@ -33,7 +33,14 @@ class UsersController extends Controller
     public function store(UsuariosRequest $request)
     {
 
-        $user = User::create($request->validated());
+        $user = (new User)->fill($request->validated());
+
+        if ($request->hasFile('avatar'))
+        {
+            $user->avatar = $request->file('avatar')->store('public');
+        }
+
+        $user->save();
 
         $user->roles()->attach($request->roles);
 
@@ -63,6 +70,11 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
 
         $this->authorize($user);
+
+        if ($request->hasFile('avatar'))
+        {
+            $user->avatar = $request->file('avatar')->store('public');
+        }
 
         $user->update($request->only('name', 'email'));
 

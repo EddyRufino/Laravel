@@ -4,17 +4,20 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-10 col-lg-6 mx-auto">
-                @if($errors->any())
+                {{-- @if($errors->any())
                     @foreach($errors->all() as $error)
                         <li> {{ $error }} </li>
                     @endforeach
-                @endif
+                @endif --}}
             <form class="bg-white shadow rounded py-3 px-4"
+                enctype="multipart/form-data"
                 action="{{ route('usuarios.update', $user->id) }}" method="post">
 
                 @csrf
                 @method('PUT')
                 <h4 class="display-4">Editar usuario</h4>
+
+                <img width="100" src="{{ Storage::url($user->avatar) }}" alt="">
 
                 @include('forms.formUser')
 

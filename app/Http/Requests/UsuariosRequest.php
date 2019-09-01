@@ -26,6 +26,7 @@ class UsuariosRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|unique:users,email,'.$this->route('usuario'),
+            'avatar' => 'image',
             'password' => 'required|confirmed',
             // 'roles' => 'required',
         ];

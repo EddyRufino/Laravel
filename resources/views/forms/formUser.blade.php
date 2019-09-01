@@ -1,4 +1,17 @@
 <div class="form-group">
+    <p>
+        <label for="avatar">
+            <input type="file" name="avatar">
+            @error('avatar')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </label>
+    </p>
+</div>
+
+<div class="form-group">
     <label for="name">Nombre</label>
     <input class="form-control bg-light shadow-sm @error('name') is-invalid @else border-0 @enderror"
             name="name"

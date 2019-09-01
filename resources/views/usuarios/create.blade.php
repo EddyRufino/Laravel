@@ -9,7 +9,9 @@
                         <li> {{ $error }} </li>
                     @endforeach
                 @endif --}}
-                    <form class="bg-white shadow rounded py-3 px-4" action="{{ route('usuarios.store') }}" method="post">
+                    <form class="bg-white shadow rounded py-3 px-4"
+                            enctype="multipart/form-data"
+                            action="{{ route('usuarios.store') }}" method="post">
                             @csrf
                         <h4 class="display-4">Crear usuario</h4>
 

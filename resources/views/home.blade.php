@@ -5,6 +5,7 @@
 @section('content')
 <div class="container">
     <div class="row">
+        {{-- <img src="/img/fondo.jpg" class="img-fluid mx-auto d-block" style="width: 100%" alt="Responsive image"> --}}
         <div class="col-12 col-lg-6">
             <h1 class="display-4 text-primary">Desarrollo Web</h1>
             <p class="lead text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum earum vero similique neque fuga magni explicabo! Doloremque aliquam eius distinctio magnam nobis mollitia dolore accusamus necessitatibus officiis, obcaecati, voluptate recusandae!</p>
