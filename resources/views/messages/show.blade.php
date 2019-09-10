@@ -1,7 +1,7 @@
 @extends('layout.layout')
-
+@section('title',  'Mensaje ' . ' - ' . $message->subject)
 @section('content')
-    <div class="container">
+    <div class="container mt-4">
         <div class="bg-white p-5 shadow rounded">
             <div class="d-flex justify-content-between align-items-center">
                 <h1>{{ $message->subject }}</h1>
@@ -9,7 +9,7 @@
             </div>
             <p class="text-secondary">{{ $message->content }}</p>
 
-            <h3>Notas</h3>
+            {{-- <h3>Notas</h3> --}}
             <p class="text-secondary">{{ $message->note ? $message->note->body : '' }}</p>
 
             <small class="text-black-50">

@@ -1,9 +1,9 @@
 @extends('layout.layout')
 
-@section('title', 'Contact')
+@section('title', 'Contacto')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
             <div class="col-12 col-sm-10 col-lg-6 mx-auto">
                 {{-- @if($errors->any())
@@ -17,7 +17,7 @@
 
                     {{-- @if (auth()->guest()) --}}
 
-                        <h1 class="display-4">Contact</h1>
+                        <h1 class="display-4 text-primary">Envia tu duda</h1>
                         <hr>
                         <div class="form-group">
                             <label class="{{ auth()->check() ? 'd-none' : '' }}" for="name">Nombre</label>
@@ -78,9 +78,16 @@
                         @enderror
                     </div>
                     <button class="btn btn-primary btn-lg btn-block">Enviar</button>
-                    <a class="btn btn-large btn-block btn-outline-success" href="{{ route('home') }}">Cancelar</a>
+                    <a class="btn btn-large btn-block btn-outline-secondary" href="{{ route('home') }}">Cancelar</a>
                 </form>
             </div>
         </div>
     </div>
+
+    <div class="sombra-block-two">
+    <div class="container mt-5 pt-5 pb-5 ">
+        <h3 class="text-center text-primary">¿Aún tienes dudas?</h3>
+        <p class="col-12 lead">Si estas interesado en conocer como tu empresa o marca personal puede llegar hacer conocida más rápido que las demás, nosotros te ayudamos a posicionar tu sitio web en los mejores lugares que tienen los principales motores de búsqueda.</p>
+    </div>
+</div>
 @endsection

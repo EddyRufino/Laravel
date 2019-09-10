@@ -1,0 +1,113 @@
+.header {
+    background-image: url('/img/fondo.jpg');
+    clip-path: polygon(100% 0, 100% 89%, 72% 92%, 37% 96%, 0 100%, 0 0);
+    background-repeat: no-repeat;
+    display: block;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    // position: relative;
+    // transform: translateY(-50px);
+    // z-index: 1;
+}
+
+a {
+    color: white;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.background-overlay {
+    background: hsla(28, 3%, 8%, .9);
+    clip-path: polygon(100% 0, 100% 89%, 72% 92%, 37% 96%, 0 100%, 0 0);
+    width: 100%;
+    height: 100vh;
+}
+
+.sombra-blo9k-two {
+    background: hsla(28, 3%, 8%, .1);
+}
+
+
+.title-one {
+    // font-size: 3rem;
+    font-weight: 700;
+}
+
+.img {
+    // display: block;
+    // width: 70px;
+    // height: 70px;
+    &-home {
+        @media (max-width: 991px) {
+            margin-top: 26px;
+        }
+    }
+}
+
+.img-block-tres {
+    @media (max-width: 991px) {
+        display: none;
+    }
+}
+
+.baner-text {
+    position: relative;
+    top: 30%;
+}
+
+.extra {
+    // z-index: 5;
+    background: hsla(28, 3%, 8%, .2);
+
+    // background-color: red;
+    // opacity: .9;
+}
+
+
+
+// Breakpoint para los botenes del header
+
+// @include media-breakpoint-up(md) {
+//     .botones {
+
+//     }
+// }
+
+@media (max-width: 767.98px) {
+    .botones {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+
+    }
+}
+
+@media (min-width: 767.98px) {
+    .botones {
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .botones-down {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+@media (min-width: 767.98px) {
+    .botones-down {
+        margin-left: 3px;
+    }
+}
+
+@media (min-width: 767.98px) {
+    .botones-up {
+        margin-right: 3px;
+    }
+}
+
+// Final Breakpoint para los botenes del header

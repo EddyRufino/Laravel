@@ -3,7 +3,7 @@
 @section('title', 'Portfolio | ' . $portfolio->title)
 
 @section('content')
-<div class="container">
+<div class="container mt-4">
     <div class="bg-white p-5 shadow rounded">
     <h1>{{ $portfolio->title }}</h1>
     <p class="text-secondary">{{ $portfolio->description }}</p>
@@ -11,7 +11,7 @@
     {{-- By <small>{{ auth()->user()->name ? 'Hola' : 'xD'  }}</small> --}}
 
     <div class="d-flex justify-content-between align-items-center mt-3">
-        <a href="{{ route('portfolio.index') }}">Regresar</a>
+        <a class="text-primary" href="{{ route('portfolio.index') }}">Regresar</a>
 
         @auth
             @if (auth()->user()->hasRoles(['admin']))

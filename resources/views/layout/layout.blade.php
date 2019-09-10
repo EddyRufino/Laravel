@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -14,13 +17,14 @@
 <body>
 
     @include('partials.nav')
-
-    <div id="app" class="d-flex flex-column justify-content-between h-screen">
+    {{-- class="d-flex flex-column justify-content-between h-screen" --}}
+    <div id="app" >
         <header>
             @include('partials.session-status')
+            @include('layout.header')
         </header>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
 

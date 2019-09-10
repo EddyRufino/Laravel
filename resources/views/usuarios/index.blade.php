@@ -1,19 +1,22 @@
 @extends('layout.layout')
-
+@section('title',  'Lista usuarios')
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-10 col-lg-10 mx-auto">
-                <table class="table col-10 bg-white shadow rounded">
-                    <h1 class="display-4">Usuarios</h1>
-                    <a class="btn btn-primary pull-right" href="{{ route('usuarios.create') }}">New User</a>
+    <div class="container mt-4">
+        <div class="d-flex justift-content-center align-items-center  justify-content-around">
+            <h1 class="display-4 text-primary">Usuarios</h1>
+            <a class="btn btn-primary pull-right d-block" href="{{ route('usuarios.create') }}">New User</a>
+        </div>
+        <div class="row col-12">
+
+            <div class="col-12 table-responsive  mx-auto">
+                <table class="table bg-white shadow rounded">
                     <thead>
                         <tr>
                         <th scope="col">Nombre</th>
                         <th scope="col">email</th>
                         <th scope="col">Role</th>
-                        <th scope="col">Notas</th>
-                        <th scope="col">Etiquetas</th>
+{{--                         <th scope="col">Notas</th>
+                        <th scope="col">Etiquetas</th> --}}
                         <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -31,15 +34,17 @@
                                 <td>{{ $user->note ? $user->note->body : '' }}</td>
                                 <td>{{ $user->tags->pluck('name')->implode(', ') }}</td>
                                 <td>
-                                    <a  class="btn btn-success"
-                                        href="{{ route('usuarios.edit', $user->id) }}"
-                                        >Editar
-                                    </a>
-                                    <form action="{{ route('usuarios.destroy', $user->id) }}"
-                                        method="post">
-                                        @csrf @method('DELETE')
-                                        <button class="btn btn-danger">Eliminar</button>
-                                    </form>
+                                    <div class="d-flex">
+                                        <a  class="btn btn-success"
+                                            href="{{ route('usuarios.edit', $user->id) }}"
+                                            >Editar
+                                        </a>
+                                        <form action="{{ route('usuarios.destroy', $user->id) }}"
+                                            method="post">
+                                            @csrf @method('DELETE')
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @empty

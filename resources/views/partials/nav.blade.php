@@ -1,26 +1,31 @@
-<nav class="navbar bg-white navbar-light navbar-expand-lg shadow-sm">
+<nav class="fixed-top extra navbar  navbar-expand-lg shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name') }}</a>
+        <a class="navbar-brand text-white" href="{{ route('home') }}">{{ config('app.name') }}</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
+                <span><i class="material-icons" style="color: white">dehaze</i></span>
         </button>
         <div class="collapse justify-content-end navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav nav-pills">
-                <li class="nav-item">
+            <ul class="nav nav-pills navbar-nav">
+{{--                 <li class="nav-item">
                     <a class="nav-link {{ routeActive('home') }}"
                     href="{{ route('home') }}"
                         >Inicio</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link {{ routeActive('about') }}"
                     href="{{ route('about') }}"
-                        >Quién Soy</a>
+                        >Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ routeActive('servicios') }}"
+                    href="{{ route('servicios') }}"
+                        >Servicios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ routeActive('portfolio.*') }}"
                     href="{{ route('portfolio.index') }}"
-                        >Portafolio</a>
+                        >Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ routeActive('contact') }}"

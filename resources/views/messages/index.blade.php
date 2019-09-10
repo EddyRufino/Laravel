@@ -1,9 +1,9 @@
 @extends('layout.layout')
-
+@section('title',  'Mensajes')
 @section('content')
-    <div class="container">
+    <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="display-4 mb-0">Mensajes</h1>
+            <h1 class="display-4 text-primary">Mensajes</h1>
         </div>
 
         <ul class="list-group">
@@ -27,7 +27,9 @@
             @empty
                 <li class="list-group-item border-0 mb-3 shadow-sm">No hay nada para mostrar</li>
             @endforelse
-            {{ $messages->links() }}
+            <div class="overflow-auto">
+                {{ $messages->links() }}
+            </div>
         </ul>
 
     </div>

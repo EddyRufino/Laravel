@@ -5,14 +5,17 @@
 // });
 
 Route::view('/', 'home')->name('home');
-Route::view('/about', 'about')->name('about');
+Route::view('/nosotros', 'about')->name('about');
 
 Route::resource('portfolio', 'PortfolioController');
 Route::resource('usuarios', 'UsersController');
 Route::resource('messages', 'MessagesController');
 
-Route::view('/contact', 'contact')->name('contact');
+Route::view('/contacto', 'contact')->name('contact');
 Route::post('/contact', 'MessagesController@store');
+
+Route::view('/servicios', 'servicios')->name('servicios');
 
 Auth::routes();
 
+App\User::class;

@@ -1,11 +1,11 @@
 @extends('layout.layout')
 
-@section('title', 'Portfolio')
+@section('title', 'CenterPage | Blog')
 
 @section('content')
-<div class="container">
+<div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="display-4 mb-0">Publicaiones</h1>
+        <h1 class="display-4 mb-0 text-primary">Publicaciones</h1>
         @auth
             @if (auth()->user()->hasRoles(['admin']))
                 <a class="btn btn-primary" href="{{ route('portfolio.create') }}">New portfolio</a><br>

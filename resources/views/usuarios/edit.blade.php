@@ -1,7 +1,9 @@
 @extends('layout.layout')
 
+@section('title',  'Perfil')
+
 @section('content')
-<div class="container">
+<div class="container mt-4">
     <div class="row">
         <div class="col-12 col-sm-10 col-lg-6 mx-auto">
                 {{-- @if($errors->any())
@@ -15,7 +17,7 @@
 
                 @csrf
                 @method('PUT')
-                <h4 class="display-4">Editar usuario</h4>
+                <h4 class="display-4 text-primary">Editar usuario</h4>
 
                 <img width="100" src="{{ Storage::url($user->avatar) }}" alt="">
 
@@ -54,6 +56,7 @@
                     </div>
 
                 <button class="btn btn-primary btn-lg btn-block">Actualizar</button>
+                <a class="btn btn-outline-secondary btn-block" href="{{route('home')}}">Cancelar</a>
             </form>
         </div>
     </div>
