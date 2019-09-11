@@ -12,7 +12,7 @@
                 @endforeach
                 @endif --}}
 
-                <form class="bg-white shadow rounded py-3 px-4" action="{{ route('contact') }}" method="post">
+                <form method="POST" class="bg-white shadow rounded py-3 px-4" action="{{ route('contact') }}">
                     @csrf
 
                     {{-- @if (auth()->guest()) --}}

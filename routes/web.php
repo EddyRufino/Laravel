@@ -11,8 +11,8 @@ Route::resource('portfolio', 'PortfolioController');
 Route::resource('usuarios', 'UsersController');
 Route::resource('messages', 'MessagesController');
 
-Route::view('/contacto', 'contact')->name('contact');
-Route::post('/contact', 'MessagesController@store');
+Route::view('/contacto', 'contact')->name('contacto');
+Route::post('/contact', 'MessagesController@store')->name('contact');
 
 Route::view('/servicios', 'servicios')->name('servicios');
 

@@ -28,8 +28,8 @@
                         >Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ routeActive('contact') }}"
-                    href="{{ route('contact') }}"
+                    <a class="nav-link {{ routeActive('contacto') }}"
+                    href="{{ route('contacto') }}"
                         >Contacto</a>
                 </li>
 
