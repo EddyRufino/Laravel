@@ -6,7 +6,7 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-12 col-sm-10 col-lg-6 mx-auto">
-                {{-- @if($errors->any())
+              {{--   @if($errors->any())
                 @foreach($errors->all() as $error)
                     <li> {{ $error }} </li>
                 @endforeach

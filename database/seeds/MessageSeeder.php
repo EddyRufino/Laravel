@@ -34,17 +34,17 @@ class MessageSeeder extends Seeder
 
         $user->roles()->save($role);
 
-        // for ($i=1; $i < 101; $i++) {
-        //     $message = Message::create([
-        //         'name' => 'Administrador',
-        //         'email' => 'eddyjaair@gmail.com',
-        //         'subject' => "Mensaje de prueba {$i}",
-        //         'content' => "Contenido del mensaje {$i}",
-        //         'user_id' => '1',
-        //         'created_at' => Carbon::now()->subDays(100)->addDays($i)
-        //     ]);
-        // }
+        for ($i=1; $i < 11; $i++) {
+            $message = Message::create([
+                'name' => 'Administrador',
+                'email' => 'eddyjaair@gmail.com',
+                'subject' => "Mensaje de prueba {$i}",
+                'content' => "Contenido del mensaje {$i}",
+                'user_id' => '1',
+                'created_at' => Carbon::now()->subDays(100)->addDays($i)
+            ]);
+        }
 
-        // $user->messages()->save($message);
+        $user->messages()->save($message);
     }
 }
